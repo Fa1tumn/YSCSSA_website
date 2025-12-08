@@ -198,14 +198,14 @@ body {
 }
 
 .section-title {
-    text-align: center;
     font-size: 2.5rem;
     color: #003875;
     margin-bottom: 1rem;
     position: relative;
-    display: inline-block;
-    left: 50%;
-    transform: translateX(-50%);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
 }
 
 .section-title::after {
