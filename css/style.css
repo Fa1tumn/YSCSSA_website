@@ -48,6 +48,18 @@ body {
     gap: 0.5rem;
 }
 
+.logo-img {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+.logo-text {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
 .logo span {
     color: #ffd700;
 }
