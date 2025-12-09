@@ -8,6 +8,20 @@ YSCSSA_website
 其中8000改为空余的端口
 然后浏览器运行 http://localhost:8000/index.html
 
+## 注意事项：
+测试后要是网站一直能开启可以检查端口运行情况，例如用8000作为端口时：
+```bash
+    netstat -ano | findstr ":8000"
+```
+会出现类似这样的结果
+```bash
+      TCP    [::]:8000              [::]:0                 LISTENING       27820
+```
+然后可以用这个命令删除进程，其中27820为上一个检查端口结果最后一个变量
+```bash
+    taskkill /PID 27820 /F
+```
+
 ## ToDo:
 ### footer处 调整联系我们
 * 微信，ins，email的logo
