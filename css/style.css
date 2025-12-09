@@ -30,13 +30,16 @@ body {
 }
 
 .nav-container {
-    max-width: 1200px;
+    max-width: 1600px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 2rem;
+    padding: 0 1rem;
+    position: relative;
+    flex-wrap: nowrap;
 }
+
 
 .logo {
     font-size: 1.5rem;
@@ -49,25 +52,57 @@ body {
 }
 
 .logo-img {
-    height: 40px;
+    height: 60px;
     width: auto;
     display: block;
 }
 
-.logo-text {
+.logo-text-full {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+}
+
+.logo-text-mobile {
+    display: none;
 }
 
 .logo span {
     color: #ffd700;
 }
 
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 6px;
+}
+
+.hamburger span {
+    width: 30px;
+    height: 3px;
+    background: white;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+}
+
 .nav-menu {
     display: flex;
     gap: 2rem;
     list-style: none;
+    position: static;
 }
 
 .nav-menu a {
@@ -204,8 +239,8 @@ body {
 
 /* 通用 Section 样式 */
 .section {
-    padding: 5rem 2rem;
-    max-width: 1200px;
+    padding: 5rem 1rem;
+    max-width: 1600px;
     margin: 0 auto;
 }
 
@@ -414,9 +449,52 @@ footer p {
         font-size: 2rem;
     }
 
+    .nav-container {
+        padding: 0 0.5rem;
+    }
+
+    .logo-text-full {
+        display: none;
+    }
+
+    .logo-text-mobile {
+        display: block;
+        font-size: 1.2rem;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
     .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        width: 100%;
+        background: rgba(0, 56, 117, 0.95);
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+        list-style: none;
+    }
+
+    .nav-menu.active {
+        max-height: 500px;
+        padding: 2rem 1rem;
         gap: 1rem;
-        font-size: 0.9rem;
+    }
+
+    .nav-menu li {
+        text-align: center;
+    }
+
+    .nav-menu a {
+        display: block;
+        padding: 0.5rem 0;
     }
 
     .about-content {
