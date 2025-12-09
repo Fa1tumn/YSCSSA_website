@@ -3,7 +3,7 @@ YSCSSA_website
 
 ## 打开方式：
 ```bash
-    python -m http.server 8000
+python -m http.server 8000
 ```
 其中8000改为空余的端口
 然后浏览器运行 http://localhost:8000/index.html
@@ -11,15 +11,15 @@ YSCSSA_website
 ## 注意事项：
 测试后要是网站一直能开启可以检查端口运行情况，例如用8000作为端口时：
 ```bash
-    netstat -ano | findstr ":8000"
+netstat -ano | findstr ":8000"
 ```
 会出现类似这样的结果
 ```bash
-      TCP    [::]:8000              [::]:0                 LISTENING       27820
+TCP    [::]:8000              [::]:0                 LISTENING       27820
 ```
 然后可以用这个命令删除进程，其中27820为上一个检查端口结果最后一个变量
 ```bash
-    taskkill /PID 27820 /F
+taskkill /PID 27820 /F
 ```
 
 ## ToDo:
